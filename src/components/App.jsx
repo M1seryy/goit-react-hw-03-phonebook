@@ -29,6 +29,11 @@ class App extends Component {
     this.state.contacts.map(item => {
       if (item.name === obj.name) {
         alert(`${obj.name} is already in contact list`);
+        this.setState({
+          contacts: this.state.contacts.filter(
+            contact => contact.name !== obj.name
+          ),
+        });
       }
       return item.name;
     });
